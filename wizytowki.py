@@ -16,3 +16,12 @@ class BusinessCards:
     def number_letters(self, value):
         self._number_letters = value
         return self._number_letters
+
+class BaseContact(BusinessCards):
+    def __init__(self, priv_number, name, last_name, email):
+        super().__init__(name, last_name, None, None, email)
+        self.priv_number = priv_number
+    def contact(self):
+        print(f" Wybieram numer {self.priv_number} i dzwonię do {self.name} {self.last_name}")
+    def __str__(self):
+        return f"{self.name}, {self.last_name}, {self.email}, {self.priv_number}"
