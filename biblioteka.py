@@ -107,3 +107,12 @@ def search():
         search_again = input('Czy chcesz kontynuować (T lub N): ').strip().upper()
         if search_again == 'N':
             search_again = False
+
+def generate_views():
+    number_1 = fake.random_int(1,101)
+    element = fake.random_int(0,len(Movies_Series) - 1)
+    Movies_Series[element].Play = number_1
+
+def auto_generate_views():
+    for _ in range(10):
+        generate_views()
