@@ -127,3 +127,28 @@ def top_titles(content_type):
         elif isinstance(element, content_type) == True and element.num_views > top_title[1]:
             top_title = (element.title, element.num_views)
     return top_title
+
+if __name__ == '__main__':
+
+    print(' |  Biblioteka filmów  | ')
+
+    Movies_Series.append(Movie(title='Piła', year='2004', category='Horror', num_views=0))
+    Movies_Series.append(Series(title='Shadowhunters', year='2016', category='Dreszczowiec', num_views=0, num_season=[13, 20, 22]))
+    Movies_Series.append(Movie(title='Koszmar z ulicy Wiązów', year='1984', category='Horror', num_views=0))
+    Movies_Series.append(Series(title='Sherlock', year='2012', category='Kryminalny', num_views=0, num_season=[3, 3, 3, 3]))
+    Movies_Series.append(Movie(title='Kruk. Zagadka zbrodni', year='2004', category='Dreszczowiec', num_views=0))
+    Movies_Series.append(Movie(title='Jak stracić faceta w 10 dni', year='2003', category='Komedia', num_views=0))
+    Movies_Series.append(Series(title='Euforia', year='2019', category='Dramat', num_views=0, num_season=[8, 8]))
+    Movies_Series.append(Series(title='Hazbin Hotel', year='2024', category='Czarna komedia', num_views=0, num_season=[10]))
+    Movies_Series.append(Movie(title='Ruchomy zamek Hauru', year='2004', category='Film familijny', num_views=0))
+    Movies_Series.append(Series(title='Niania', year='2008', category='Komedia', num_views=0, num_season=[12, 10, 8, 10]))
+
+    auto_generate_views()
+    print(f'Najpopularniejsze filmy i seriale dnia {time}: \n Film: {top_titles(Movie)} \n Serial: {top_titles(Series)}')
+    sorted_elements = sorted(Movies_Series, key= lambda element: element.num_views)
+    print(' | Top 3 | ')
+    print(sorted_elements[-1], ' | ', sorted_elements[-1].num_views)
+    print(sorted_elements[-2], ' | ', sorted_elements[-2].num_views)
+    print(sorted_elements[-3], ' | ', sorted_elements[-3].num_views)
+
+    search()
