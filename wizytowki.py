@@ -46,3 +46,17 @@ def create_contacts():
         BusinessPeople.append(BusinessContact(name=fake.name(), last_name=fake.last_name(), company=fake.company(), business_number=fake.phone_number(), job=fake.job()))
 
 create_contacts()
+
+for person in BasePeople:
+    print(person)
+    person.contact()
+    value = len(person.name) + len(person.last_name)
+    person.number_letters = value
+    print(person.number_letters)
+
+for person in BusinessPeople:
+    print(person)
+    person.contact()
+    value = len(person.name) + len(person.last_name)
+    person.number_letters = value
+    print(person.number_letters)
