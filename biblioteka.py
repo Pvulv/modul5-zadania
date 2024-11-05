@@ -24,3 +24,7 @@ class BaseInfo:
     
     def __str__(self):
         return f"{self.title} ({self.year})"
+
+class Movie(BaseInfo):
+    def __init__(self, title, year, category, num_views = 0):
+        super().__init__(title, year, category, num_views)
