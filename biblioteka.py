@@ -42,3 +42,15 @@ class Series(BaseInfo):
     
     def __str__(self):
         return f"{self.title}"
+
+def getMovie():
+    print(' | Filmy | ')
+    for movie in Movies_Series:
+        if isinstance(movie,Movie) == True:
+            print(movie)
+
+def getSeries():
+    print(' | Seriale | ')
+    for serie in Movies_Series:
+        if isinstance(serie,Series) == True:
+            print(serie)
