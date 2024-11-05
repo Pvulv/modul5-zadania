@@ -116,3 +116,14 @@ def generate_views():
 def auto_generate_views():
     for _ in range(10):
         generate_views()
+
+def top_titles(content_type):
+
+    top_title = ('', 0)
+    name = ''
+    for element in Movies_Series:
+        if isinstance(element, content_type) == True and top_title[1] == 0:
+            top_title = (element.title, element.num_views)
+        elif isinstance(element, content_type) == True and element.num_views > top_title[1]:
+            top_title = (element.title, element.num_views)
+    return top_title
