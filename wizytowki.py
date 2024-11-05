@@ -34,3 +34,15 @@ class BusinessContact(BusinessCards):
         print(f" Wybieram numer {self.business_number} i dzwonię do {self.name} {self.last_name}")
     def __str__(self):
         return f"{self.company}, {self.job}, {self.business_number}"
+
+BasePeople = []
+BusinessPeople = []
+
+def create_contacts():
+    for i in range(fake.random_int(1,5)):
+        BasePeople.append(BaseContact(priv_number=fake.phone_number(), name=fake.name(), last_name=fake.last_name(), email=fake.email()))    
+    
+    for z in range(fake.random_int(1,7)):
+        BusinessPeople.append(BusinessContact(name=fake.name(), last_name=fake.last_name(), company=fake.company(), business_number=fake.phone_number(), job=fake.job()))
+
+create_contacts()
